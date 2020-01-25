@@ -1,2 +1,2 @@
 # mapa_eskolar
-Kria mapa eskolar sira iha Timor Leste 
+Kria mapa eskola sira iha Timor Leste 
