@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% csrf_token %}
+    <h2>Aprende Kria mapa</h2>
+    {% for mappoint in mappoints %}
+        {{ mappoint.name }}
+    {% endfor %}
+{% endblock %}
+
