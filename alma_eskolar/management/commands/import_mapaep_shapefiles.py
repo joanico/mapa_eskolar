@@ -6,7 +6,7 @@ class Command(BaseCommand):
     help = 'Import models from shapefiles'
 
     def handle(self, *args, **options):
-        path_of_shp = './shapefiles/mapaep/mapaep.shp'
+        path_of_shp = './shapefiles/mapa_ep/mapa_ep.shp'
         mapaep_mapping = {
             'name': 'name',
             'geom': 'Point'

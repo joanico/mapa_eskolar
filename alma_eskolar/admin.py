@@ -3,6 +3,7 @@ from django.contrib.gis import admin
 from leaflet.admin import LeafletGeoAdmin
 from .models import EpMap, EbcMap, Subdistrict
 
+#Set leaflet map iha admin tuir coordinator nebe fo ona iha nee
 settings_overrides =  {
     'DEFAULT_CENTER': ([-8.8315139, 125.6199236,8]),
     'DEFAULT_ZOOM': 7,
