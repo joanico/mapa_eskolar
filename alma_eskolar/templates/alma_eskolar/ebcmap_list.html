@@ -16,10 +16,10 @@
             {% for ebcmap in ebcmaps %}
             <tr>
                 <th scope="row">{{ebcmap.id}}</th>
-                <td>{{ebcmap.name}}</td>
+                <th><a href="{{ ebcmap.get_absolute_url }}">{{ ebcmap.name }}</a></th>
                 <td>{{ebcmap.geom}}</td>
             </tr>
-                {% endfor%}
+            {% endfor%}
           </tbody>
         </table>
     </div>
