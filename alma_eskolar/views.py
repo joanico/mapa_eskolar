@@ -1,18 +1,31 @@
 from django.shortcuts import render
 from .models import Subdistrict, EbcMap
 from django.views.generic import TemplateView
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from django.core.serializers import serialize
 
 
-class EbcMapView(TemplateView):
-    #kria template ba view nian
+class EbcmapListView(ListView):
+
     template_name = "base.html"
+    model = EbcMap
+    paginate_by = 100  # if pagination is desired
 
-    def get_context_data(self, *args, **kwargs):
-        context = super(TemplateView, self).get_context_data(*args, *kwargs)
-        #get context ida ba map EBC nian.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         context['mappoints'] = serialize('geojson', EbcMap.objects.all(), geometry_field='geom')
-        #get context ida ne'e ba lista eskola ebc
         context['ebcmaps'] = EbcMap.objects.all()
-
         return context
+
+
+class EbcmapDetailView(DetailView):
+
+    model = EbcMap
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ebcmapas'] = EbcMap.objects.all()
+        return context
+
+
