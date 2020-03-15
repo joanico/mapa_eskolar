@@ -22,10 +22,16 @@
         {% endblock %}
     </head>
     <body>
+
+        {# Inklui header iha ne'e #}
+
+        {# {% include 'alma_eskolar/header.html' %} #}
+
         <div class="container">
             {% block content %}
                 <script>
                 </script>
+
                 {% include 'alma_eskolar/eskola_point.html' %}
                 {% include 'alma_eskolar/ebcmap_list.html' %}
 
@@ -33,9 +39,6 @@
 
             {% block script %}
             {% endblock %}
-
         </div>
-        <footer>
-        </footer>
     </body>
 </html>

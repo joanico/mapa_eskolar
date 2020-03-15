@@ -27,5 +27,3 @@ class EbcmapDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['ebcmapas'] = EbcMap.objects.all()
         return context
-
-
