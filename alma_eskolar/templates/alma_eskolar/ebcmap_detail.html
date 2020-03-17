@@ -15,29 +15,23 @@
 
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div>
-                <h2>Detallu mapa Eskolar</h2>
-                <p>Naran: {{ object.name }}</p>
-                <p>Geom: {{ object.geom }}</p>
-            </div>
-
-            {% leaflet_map "main" callback="map_init" %}
-
-            <script type="text/javascript">
-                function map_init(map, options) {
-
-                    // get point lat and lon
-                    var lon = "{{ object.geom.x }}";
-                    var lat = "{{ object.geom.y }}";
-                    // zoom to point & add it to map
-                    map.setView([lat, lon], 17);
-                    L.marker([lat, lon]).addTo(map);
-                }
-            </script>
+        <div>
+            <h2>Detallu mapa Eskolar</h2>
+            <p>Naran: {{ object.name }}</p>
+            <p>Geom: {{ object.geom }}</p>
         </div>
-    </div>
-</div>
+
+        {% leaflet_map "main" callback="map_init" %}
+
+        <script type="text/javascript">
+            function map_init(map, options) {
+
+                // get point lat and lon
+                var lon = "{{ object.geom.x }}";
+                var lat = "{{ object.geom.y }}";
+                // zoom to point & add it to map
+                map.setView([lat, lon], 17);
+                L.marker([lat, lon]).addTo(map);
+            }
+        </script>
 {% endblock %}
