@@ -5,8 +5,8 @@ body {
 }
 
 #mapid { 
-    height: 750px; 
-    width: 1300px;
+    height: 450px; 
+    width: 1290px;
     margin-bottom: 30px;
 }
 
@@ -20,4 +20,25 @@ body {
 
 .text {
     font-size: 18px;
+}
+
+/* HEADER */
+
+.bg-light {
+    padding: 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-brand {
+    font-size: 34px;
+}
+
+.detail-list {
+    border-right: 1px solid #dee2e6;
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 40px;
+    border-top: 1px solid #dee2e6;
 }
