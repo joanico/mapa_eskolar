@@ -1,11 +1,12 @@
-{% extends "base.html" %}
-
 {% load static %}
 {% load i18n %}
 {% load leaflet_tags %}
 {% csrf_token %}
 
 {% block head %}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
  
     <!-- Make sure you put this AFTER Leaflet's CSS -->
 
@@ -13,34 +14,48 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2>Eskola sira iha Timor</h2>
-                <div>
-                </div>
-                
-                <div id="mapid"></div>
-              
-                <script>
-                    const mappoints = {{ mappoints|safe }};
+        <div id="mapid"></div>
 
-                    var mymap = L.map('mapid').setView([-8.8315139, 125.6199236,8], 8);
-                    
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(mymap);
-                    
+        <script>
+            const mappoints = {{ mappoints|safe }};
 
-                    L.geoJSON(mappoints, {
-                      style: function (feature) {
-                        return {color: 'sky'};
-                      }
-                    }).bindPopup(function (layer) {
-                      var name = layer.feature.properties.name;
-                        return name[0] + name.substr(1).toLowerCase();
-                    }).addTo(mymap);  
+            var mymap = L.map('mapid').setView([-8.8315139, 125.6199236,8], 8);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(mymap);
+            
 
-                </script>
-            </div>
+            L.geoJSON(mappoints, {
+              style: function (feature) {
+                return {color: 'sky'};
+              }
+            }).bindPopup(function (layer) {
+              var name = layer.feature.properties.name;
+                return name[0] + name.substr(1).toLowerCase();
+            }).addTo(mymap);  
+
+        </script>
+
+        <h2>Lista mapa Eskolar</h2>
+        <div class="table-responsive-sm">
+            <table class="table">
+              <caption>List of users</caption>
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Location</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for ebcmap in ebcmaps %}
+                <tr>
+                    <th scope="row">{{ebcmap.id}}</th>
+                    <th><a href="{{ ebcmap.get_absolute_url }}">{{ ebcmap.name }}</a></th>
+                    <td>{{ebcmap.geom}}</td>
+                </tr>
+                {% endfor%}
+              </tbody>
+            </table>
         </div>
-    </div>
+
 {% endblock %}
