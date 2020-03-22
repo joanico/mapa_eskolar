@@ -52,9 +52,5 @@ body {
 
 .pagination {
     font-size: 16px;
-    padding: 32px;
-}
-
-span.step-links {
-    padding-left: 20px;
+    padding: 40px;
 }
