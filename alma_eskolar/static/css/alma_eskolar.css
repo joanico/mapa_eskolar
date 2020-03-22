@@ -42,3 +42,19 @@ body {
     padding: 40px;
     border-top: 1px solid #dee2e6;
 }
+
+.list-name {
+    border-right: 1px solid #dee2e6;
+}
+
+
+/* HEADER */
+
+.pagination {
+    font-size: 16px;
+    padding: 32px;
+}
+
+span.step-links {
+    padding-left: 20px;
+}
