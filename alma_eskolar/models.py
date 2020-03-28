@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.gis.db import models
 from django.urls import reverse
 
-#Model ba Mapa Sub-distrito nia 
-class Subdistrict(models.Model):
+#Model ba Mapa distrito nia 
+class District(models.Model):
     name = models.CharField(max_length=124)
 
     geom = models.MultiPolygonField()

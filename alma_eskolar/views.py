@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Subdistrict, EbcMap
+from .models import District, EbcMap
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
