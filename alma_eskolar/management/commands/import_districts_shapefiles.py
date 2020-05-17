@@ -8,8 +8,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         path_of_shp = './shapefiles/districts/districts.shp'
         district_mapping = {
-            'name': 'DISTR',
-            'geom': 'Polygon'
+            'name': 'DISTNAME',
+            'geom': 'POLYGON'
         }
         try:
             lm = LayerMapping(District, path_of_shp, district_mapping, transform=False)

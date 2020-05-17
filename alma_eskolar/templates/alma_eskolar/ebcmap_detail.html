@@ -19,7 +19,10 @@
             <div class="col-md-6 detail-list">
                 <h2>Detallu mapa Eskolar</h2>
                 <p>Naran: {{ object.name }}</p>
+                <p>Municipiu: {{ object.municipality }}</p>
                 <p>Geom: {{ object.geom }}</p>
+                <p>Deskrisaun: {{ object.description }}</p>
+                <p>Photo:<img class="card-image-top" src="{{ object.photo }}" alt="card image cap"></p>
             </div>
             <div class="col-md-6 detail-map">
                 {% leaflet_map "main" callback="map_init" %}
@@ -30,9 +33,19 @@
                         // get point lat and lon
                         var lon = "{{ object.geom.x }}";
                         var lat = "{{ object.geom.y }}";
+                        
+                        var greenIcon = new L.Icon({
+                          iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+                          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                          iconSize: [25, 41],
+                          iconAnchor: [12, 41],
+                          popupAnchor: [1, -34],
+                          shadowSize: [41, 41]
+                        });
+
                         // zoom to point & add it to map
                         map.setView([lat, lon], 17);
-                        L.marker([lat, lon]).addTo(map);
+                        L.marker([lat, lon], {icon: greenIcon}).addTo(map);
                     }
                 </script>
               </div>
