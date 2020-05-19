@@ -22,7 +22,7 @@
                 <p>Municipiu: {{ object.municipality }}</p>
                 <p>Geom: {{ object.geom }}</p>
                 <p>Deskrisaun: {{ object.description }}</p>
-                <p>Photo:<img class="card-image-top" src="{{ object.photo }}" alt="card image cap"></p>
+                <p>Photo:<img class="card-image-top" src="{{ object.photo.url }}" alt="card image cap"  width="400" height="350"></p>
             </div>
             <div class="col-md-6 detail-map">
                 {% leaflet_map "main" callback="map_init" %}

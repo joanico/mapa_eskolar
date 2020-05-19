@@ -127,6 +127,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "alma_eskolar/static"),
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 LEAFLET_CONFIG = {
     # conf here
     'DEFAULT_CENTER': (-8.801, 126.159),
