@@ -5,7 +5,6 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.core.serializers import serialize
 from django.core.paginator import Paginator
-from .forms import DistrictForm
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from .filters import EbcmapFilter
