@@ -13,6 +13,7 @@ class DistrictAdmin(admin.OSMGeoAdmin):
     list_display = ['name']
     list_filter = ['name']
 
+
 admin.site.register(District, DistrictAdmin)
 admin.site.register(EbcMap, LeafletGeoAdmin)
 admin.site.register(EpMap, LeafletGeoAdmin)

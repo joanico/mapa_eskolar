@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'leaflet',
     'django.contrib.gis',
     'django_extensions',
+    'django_filters',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
