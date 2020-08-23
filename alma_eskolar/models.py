@@ -9,7 +9,7 @@ class District(models.Model):
     geom = models.MultiPolygonField()
 
     def __str__(self):
-        return '{} pk:{}'.format(self.name, self.pk)
+        return '{}'.format(self.name)
 
 #Model ba Mapa Eskola EBC nian
 class EbcMap(models.Model):

@@ -60,3 +60,9 @@ body {
 button.btn.btn-primary.search-filter {
     margin: 28px;
 }
+
+.pagination {
+    font-size: 16px;
+    padding-left: 85px;
+    display: inherit;
+}

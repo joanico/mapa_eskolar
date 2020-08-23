@@ -1,0 +1,18 @@
+{% load static %}
+{% load staticfiles %}
+{% load pagination_tags %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <form action="" method="GET">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+    {% autopaginate filter.qs 40 as filter_list %}
+
+    {% for obj in filter_list %}
+        {{ obj.name }} - {{ obj.district }}<br />
+    {% endfor %}
+
+    {% paginate %}
+{% endblock %}

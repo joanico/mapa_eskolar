@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_filters',
     'widget_tweaks',
+    'dj_pagination',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dj_pagination.middleware.PaginationMiddleware',
 ]
 
 ROOT_URLCONF = 'mapa_eskolar.urls'

@@ -1,53 +1,55 @@
+{% load static %}
+{% load staticfiles %}
+{% load pagination_tags %}
+
 {% load widget_tweaks %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-6 list-name">
-            <h2>Lista mapa Eskolar</h2>
-            <div class="table-responsive-sm">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">No</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Cordinator</th>
-                      <th scope="col">District</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for ebcmap in page_obj %}
-                    <tr>
-                        <th scope="row">{{ ebcmap.id }}</th>
-                        <th><a href="{{ ebcmap.get_absolute_url }}">{{ ebcmap.name }}</a></th>
-                        <th scope="row">{{ ebcmap.geom }}</th>
-                        <th scope="row">{{ ebcmap.district }}</th>
-                    </tr>
-                    {% endfor%}
-                  </tbody>
-                </table>
-                
-                <nav aria-label="...">
-                    <div class="pagination">
-                        <span class="step-links">
-                            {% if page_obj.has_previous %}
-                                <a href="?page=1">&laquo; First</a>
-                                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                            {% endif %}
 
-                            <span class="current">
-                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                            </span>
-
-                            {% if page_obj.has_next %}
-                                <a href="?page={{ page_obj.next_page_number }}">Next</a>
-                                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
-                            {% endif %}
-                        </span>
-                    </div>
-                </nav>
+<form method="get">
+    <div class="well">
+        <h4 style="margin-top: 0">Filter</h4>
+        <div class="row">
+            <div class="form-group col-sm-2 col-md-4">
+              {{ filter.form.name.label_tag }}
+              {% render_field filter.form.name class="form-control" %}
+            </div>
+            <div class="form-group col-sm-2 col-md-4">
+              {{ filter.form.district.label_tag }}
+              {% render_field filter.form.district class="form-control" %}
+            </div>
+            <div class="form-group col-sm-2 col-md-4">
+                <button type="submit" class="btn btn-primary search-filter">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                </button>
             </div>
         </div>
-        <div class="col-md-6 map-info"><h3>Informasaun konaba Mapa Eskolar</h3></div>
     </div>
-
+</form>
+    {% autopaginate filter.qs 15 as filter_list %}
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Names of EBC</th>
+        <th>Districts</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for ebcmap in filter_list %}
+            <tr>
+                <td><a href="{{ ebcmap.get_absolute_url }}">{{ ebcmap.name }}</a></td>
+                <td>{{ ebcmap.district }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No data</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <nav aria-label="...">
+        <div class="pagination">
+            {% paginate %}
+        </div>
+    </nav>
 {% endblock %}

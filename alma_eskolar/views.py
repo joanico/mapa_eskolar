@@ -4,7 +4,6 @@ from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.core.serializers import serialize
-from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from .filters import EbcmapFilter
@@ -13,7 +12,6 @@ class EbcmapListView(ListView):
 
     template_name = "base.html"
     model = EbcMap
-    paginate_by = 10  # if pagination is desired
 
     def get_context_data(self, **kwargs):
 
