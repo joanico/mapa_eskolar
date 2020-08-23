@@ -9,11 +9,11 @@ class District(models.Model):
     geom = models.MultiPolygonField()
 
     def __str__(self):
-        return '{} pk:{}'.format(self.name, self.pk)
+        return '{}'.format(self.name)
 
 #Model ba Mapa Eskola EBC nian
 class EbcMap(models.Model):
-    municipality = models.ForeignKey(District, related_name='municipality', on_delete=models.CASCADE, null=True, blank=True) 
+    district = models.ForeignKey(District, related_name='district', on_delete=models.CASCADE, null=True, blank=True) 
     name = models.CharField(max_length=100, blank=True)
     geom = models.PointField()
     photo =  models.ImageField(upload_to='photos', verbose_name='Eskola Photo')

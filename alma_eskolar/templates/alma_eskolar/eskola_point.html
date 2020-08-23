@@ -55,48 +55,4 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6 list-name">
-            <h2>Lista mapa Eskolar</h2>
-            <div class="table-responsive-sm">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">No</th>
-                      <th scope="col">Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for ebcmap in page_obj %}
-                    <tr>
-                        <th scope="row">{{ebcmap.id}}</th>
-                        <th><a href="{{ ebcmap.get_absolute_url }}">{{ ebcmap.name }}</a></th>
-                    </tr>
-                    {% endfor%}
-                  </tbody>
-                </table>
-                
-                <nav aria-label="...">
-                    <div class="pagination">
-                        <span class="step-links">
-                            {% if page_obj.has_previous %}
-                                <a href="?page=1">&laquo; First</a>
-                                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                            {% endif %}
-
-                            <span class="current">
-                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                            </span>
-
-                            {% if page_obj.has_next %}
-                                <a href="?page={{ page_obj.next_page_number }}">Next</a>
-                                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
-                            {% endif %}
-                        </span>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <div class="col-md-6 map-info"><h3>Informasaun konaba Mapa Eskolar</h3></div>
-    </div>
 {% endblock %}
