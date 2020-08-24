@@ -43,21 +43,16 @@ Kria mapa eskola sira iha Timor Leste
          }
      }
      ```
+9. Rejistu postgis iha `INSTALLED_APPS` settings `django.contrib.gis`
 
-     9. Rejistu postgis iha settings `django.contrib.gis`
-
-9. Extra file mapa eskolar ho .shp husi shapefiles no uza funsaun `ogeinfo`
+10. Extra file mapa eskolar ho .shp husi shapefiles no uza funsaun `ogeinfo`
        - `ogrinfo shapefiles/mapaeb.shp`  
 
        - `ogrinfo -so shapefiles/mapaeb.shp mapaeb`
-
-   10. Kria model 
-
-   11. setup admin
-
-   12. `./manage.py makemigrations` 
-
-   13. `./manage.py sqlmigrate alma_eskolar 0001`
+11. Kria model 
+12. setup admin
+13. `./manage.py makemigrations` 
+14. `./manage.py sqlmigrate alma_eskolar 0001`
 
              BEGIN;
              --
@@ -67,31 +62,22 @@ Kria mapa eskola sira iha Timor Leste
              CREATE INDEX "alma_eskolar_mappoint_geom_id" ON "alma_eskolar_mappoint"USING GIST ("geom");
              COMMIT;
 
-   14. `./manage.py migrate `
+15. `./manage.py migrate `
 
                  Operations to perform:
                Apply all migrations: admin, alma_eskolar, auth, contenttypes, sessions
                  Running migrations:
                    Applying alma_eskolar.0001_initial... OK
 
-       15.  Kria Surperuser `./manage.py createsuperuser`
-
-   15. Run server `./manage.py runserver`
-
-   16. Loke admin hodi hare rezultadu iha admin.
-
-       18. Etapa tuir kria view ho template hodi hare rezultadu iha interface
-
-       19. Kria View.py
-
-       20. Kria urls.py iha apps
-
-       21. kria urls.py project
-
-       22. kria template
-
-       23. konfigura leaflet map iha settings
-
+16.  Kria Surperuser `./manage.py createsuperuser`
+17. Run server `./manage.py runserver`
+18. Loke admin hodi hare rezultadu iha admin.
+19. Etapa tuir kria view ho template hodi hare rezultadu iha interface
+20. Kria View.py
+21. Kria urls.py iha apps
+22. kria urls.py project
+23. kria template
+24. konfigura leaflet map iha settings
            ```
            LEAFLET_CONFIG = {
                # conf here
@@ -101,11 +87,8 @@ Kria mapa eskola sira iha Timor Leste
                'MAX_ZOOM': 10,
            }
            ```
-
-           24. Hatama css ba static
-
-           25. konfigura file static iha settings
-
+25. Hatama css ba static
+26. konfigura file static iha settings
                ```
                STATIC_URL = '/static/'
                
@@ -113,15 +96,8 @@ Kria mapa eskola sira iha Timor Leste
                    os.path.join(BASE_DIR, "alma_eskolar/static"),
                ]
                ```
-
-               26. Reload pajina hodi hare ita nia mapa
-
-           
-
-           Reference: 
-
-           Django Filter :
-
-           Django pagination : https://dj-pagination.readthedocs.io/en/latest/usage.html
-
-           combination of django filter and pagination: https://github.com/carltongibson/django-filter/issues/13
+27. Reload pajina hodi hare ita nia mapa     
+Reference: 
+   Django Filter :
+   Django pagination : https://dj-pagination.readthedocs.io/en/latest/usage.html
+   Combination of django filter and pagination: https://github.com/carltongibson/django-filter/issues/13
