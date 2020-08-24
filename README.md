@@ -89,15 +89,17 @@ Kria mapa eskola sira iha Timor Leste
            ```
 25. Hatama css ba static
 26. konfigura file static iha settings
-               ```
-               STATIC_URL = '/static/'
+           ```
+           STATIC_URL = '/static/'
                
                STATICFILES_DIRS = [
                    os.path.join(BASE_DIR, "alma_eskolar/static"),
                ]
-               ```
+           ```
 27. Reload pajina hodi hare ita nia mapa     
 Reference: 
    Django Filter :
+   
    Django pagination : https://dj-pagination.readthedocs.io/en/latest/usage.html
+   
    Combination of django filter and pagination: https://github.com/carltongibson/django-filter/issues/13
