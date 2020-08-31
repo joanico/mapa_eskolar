@@ -5,8 +5,8 @@ body {
 }
 
 #mapid { 
-    height: 450px; 
-    width: 1290px;
+    height: 460px; 
+    width: 1270px;
     margin-bottom: 30px;
 }
 
@@ -48,13 +48,6 @@ body {
 }
 
 
-/* HEADER */
-
-.pagination {
-    font-size: 16px;
-    padding: 40px;
-}
-
 /* FILTER LIST */
 
 button.btn.btn-primary.search-filter {
@@ -63,6 +56,6 @@ button.btn.btn-primary.search-filter {
 
 .pagination {
     font-size: 16px;
-    padding-left: 85px;
-    display: inherit;
+    padding-left: 200px;
+    display: initial;
 }

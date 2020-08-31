@@ -14,6 +14,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-12 map-point">
             <div id="mapid"></div>
@@ -24,35 +25,40 @@
                 const mappoints = {{ mappoints|safe }};
 
 
-                var eskola_map = L.map('mapid').setView([-8.8315139, 125.6199236,8], 8);
+                var eskola_map = L.map('mapid').setView([-8.8315139, 125.6199236,8], 8.5);
 
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(eskola_map);
+                L.tileLayer('{{ url_openstreetmap }}', { minZoom:8, maxZoom: 18 }).addTo(eskola_map);
 
 
                 L.geoJSON(districts, {
                 style: function (feature) {
-                        return {color: 'silver'};
+                        return {color: 'green'};
                     }
                 }).bindPopup(function (layer) {
                     var name = layer.feature.properties.name;
                         return 'Distritu: ' + name[0] + name.substr(1).toLowerCase();
                 }).addTo(eskola_map);
 
+                var geojsonMarkerOptions = {
+                    radius: 5,
+                    fillColor: "#ff7800",
+                    color: "#000",
+                    weight: 0.5,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                };
 
-                L.geoJSON(mappoints, {
-                style: function (feature) {
-                    return {color: 'red',
-                            weight: 2,
-                            opacity:1
-                    };
-                }
+                L.geoJson(mappoints, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.circleMarker(latlng, geojsonMarkerOptions);
+                    }
                 }).bindPopup(function (layer) {
-                  var name = layer.feature.properties.name;
-                    return name[0] + name.substr(1).toLowerCase();
-                }).addTo(eskola_map);  
+                    var name = layer.feature.properties.name;
+                        return name[0] + name.substr(1).toLowerCase();
+                }).addTo(eskola_map);
 
             </script>
         </div>
     </div>
-
+</div>
 {% endblock %}
