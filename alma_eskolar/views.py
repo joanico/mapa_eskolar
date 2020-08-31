@@ -7,6 +7,7 @@ from django.core.serializers import serialize
 from django.urls import reverse_lazy
 from django.http import JsonResponse
 from .filters import EbcmapFilter
+from django.conf import settings
 
 class EbcmapListView(ListView):
 
@@ -19,6 +20,7 @@ class EbcmapListView(ListView):
         context['mappoints'] = serialize('geojson', EbcMap.objects.all(), geometry_field='geom')
         context['districts'] = serialize('geojson', District.objects.all(), geometry_field='geom')
         context['filter'] =  EbcmapFilter(self.request.GET, queryset=self.get_queryset())
+        context['url_openstreetmap'] = settings.OPENSTREETMAP_URL
         return context
 
 
@@ -31,5 +33,6 @@ class EbcmapDetailView(DetailView):
         context = super(EbcmapDetailView, self).get_context_data(*args, **kwargs)
         ebc_pk = self.kwargs['pk']
         context['ebcmapas'] = EbcMap.objects.get(pk=ebc_pk)
+        context['url_openstreetmap'] = settings.OPENSTREETMAP_URL
         return context
 
