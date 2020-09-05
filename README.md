@@ -103,3 +103,4 @@ Reference:
    Django pagination : https://dj-pagination.readthedocs.io/en/latest/usage.html
    
    Combination of django filter and pagination: https://github.com/carltongibson/django-filter/issues/13
+   Change Icon circle market use leaflet : https://leafletjs.com/examples/geojson/
