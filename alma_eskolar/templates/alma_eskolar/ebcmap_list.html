@@ -32,6 +32,7 @@
       <tr>
         <th>Names of EBC</th>
         <th>Districts</th>
+        <th>Image</th>
       </tr>
     </thead>
     <tbody>
@@ -39,6 +40,7 @@
             <tr>
                 <td><a href="{{ ebcmap.get_absolute_url }}">{{ ebcmap.name }}</a></td>
                 <td>{{ ebcmap.district }}</td>
+                <td><img src="{{ ebcmap.photo.url }}" alt="connect" style="max-height:200px"></td>
             </tr>
             {% empty %}
             <tr>

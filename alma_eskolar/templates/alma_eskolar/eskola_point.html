@@ -1,4 +1,5 @@
 {% load static %}
+{% load staticfiles %}
 {% load i18n %}
 {% load leaflet_tags %}
 {% csrf_token %}
@@ -36,7 +37,7 @@
                     }
                 }).bindPopup(function (layer) {
                     var name = layer.feature.properties.name;
-                        return 'Distritu: ' + name[0] + name.substr(1).toLowerCase();
+                    return "<h4>" + 'Distritu: ' + name[0] + name.substr(1).toLowerCase() + "</h4>";
                 }).addTo(eskola_map);
 
                 var geojsonMarkerOptions = {
@@ -53,10 +54,9 @@
                         return L.circleMarker(latlng, geojsonMarkerOptions);
                     }
                 }).bindPopup(function (layer) {
-                    var name = layer.feature.properties.name;
-                        return name[0] + name.substr(1).toLowerCase();
+                    var feature_content = "<img src='"+ {{ mappoints.photo.url }}  +" "+"' width='90'></br>" + "</br>" + layer.feature.properties.name;
+                    return feature_content
                 }).addTo(eskola_map);
-
             </script>
         </div>
     </div>
