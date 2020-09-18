@@ -143,6 +143,11 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 LEAFLET_CONFIG = {
     # conf here
     'DEFAULT_CENTER': (-8.801, 126.159),
@@ -156,3 +161,5 @@ OPENSTREETMAP_URL = '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+
