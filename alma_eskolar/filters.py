@@ -1,5 +1,5 @@
-from .models import EbcMap
 import django_filters
+from .models import EbcMap
 
 class EbcmapFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(lookup_expr='icontains')

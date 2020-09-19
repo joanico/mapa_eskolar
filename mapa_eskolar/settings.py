@@ -39,12 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'leaflet',
     'django.contrib.gis',
     'django_extensions',
     'django_filters',
-    'widget_tweaks',
     'dj_pagination',
+    'leaflet',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
