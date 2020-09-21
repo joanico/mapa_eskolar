@@ -1,0 +1,61 @@
+body {
+    margin: 0px;
+    color: #000000c7;
+    font-family: 'Montserrat';
+}
+
+#mapid { 
+    height: 460px; 
+    width: 1270px;
+    margin-bottom: 30px;
+}
+
+.container {
+    margin: 0px;
+}
+
+.logo {
+    font-size: 46px;
+}
+
+.text {
+    font-size: 18px;
+}
+
+/* HEADER */
+
+.bg-light {
+    padding: 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-brand {
+    font-size: 34px;
+}
+
+.detail-list {
+    border-right: 1px solid #dee2e6;
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 40px;
+    border-top: 1px solid #dee2e6;
+}
+
+.list-name {
+    border-right: 1px solid #dee2e6;
+}
+
+
+/* FILTER LIST */
+
+button.btn.btn-primary.search-filter {
+    margin: 28px;
+}
+
+.pagination {
+    font-size: 16px;
+    padding-left: 200px;
+    display: initial;
+}
