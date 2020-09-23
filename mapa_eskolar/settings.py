@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'leaflet',
     'widget_tweaks',
     'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
