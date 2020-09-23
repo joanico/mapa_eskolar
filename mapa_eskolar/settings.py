@@ -27,7 +27,7 @@ SECRET_KEY = '6c+%1j&*+^e7@l@^=i0a$d4a*%2+unt8%dekvm#-)4btrj9m@e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'mapa-eskolar.herokuapp.com']
 
 
 # Application definition
