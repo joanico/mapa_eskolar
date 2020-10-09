@@ -2,11 +2,26 @@
 {% load i18n %}
 
 {% block header %}
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="row">
-            <div class="col-sm-4">
-                <a class="navbar-brand" href="/">Mapa Eskolar</a>
-            </div>
+  <a class="navbar-brand" href="/"><span class="logo">Mapa<span class="blue-text">Eskolar</span></span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="setting">Settings</span></a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Hili Lingua</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Logout</a>
         </div>
+      </li>
+    </ul>
+  </div>
 </nav>
+
+
 {% endblock %}

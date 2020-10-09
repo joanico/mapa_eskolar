@@ -26,21 +26,52 @@ body {
 
 .bg-light {
     padding: 20px;
-    border-bottom: 1px solid #dee2e6;
+    background-color: #052641!important;
+    font-family: sans-serif;
+    color: aliceblue;
+}
+
+.navbar-light .navbar-brand {
+    font-family: sans-serif;
+    color: aliceblue;
 }
 
 .navbar-brand {
     font-size: 34px;
 }
 
-.detail-list {
-    border-right: 1px solid #dee2e6;
+span.setting {
+    color: limegreen;
+    padding-left: 800px;
 }
 
-.footer {
+/* MAPA DETALLU */
+
+.info_detail {
+    margin: 20px;
+    margin-left: 460px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+/* FOOTER */
+.page-footer {
     margin-top: 30px;
     padding: 40px;
     border-top: 1px solid #dee2e6;
+    background-color: #052641;
+}
+
+.footer-copyright {
+    border-top: 1px solid #487579;
+    margin: 30px;
+    padding: 20px;
+    font-family: sans-serif;
+    color: aliceblue;
 }
 
 .list-name {

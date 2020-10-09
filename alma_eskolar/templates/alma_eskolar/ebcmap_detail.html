@@ -15,16 +15,9 @@
 
 
 {% block content %}
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 detail-list">
-                <h2>Detallu mapa Eskolar</h2>
-                <p>Naran: {{ object.name }}</p>
-                <p>Municipiu: {{ object.municipality }}</p>
-                <p>Geom: {{ object.geom }}</p>
-                <p>Deskrisaun: {{ object.description }}</p>
-                <p>Photo:<img class="card-image-top" src="{{ object.photo.url }}" alt="card image cap"  width="400" height="350"></p>
-            </div>
-            <div class="col-md-6 detail-map">
+            <div class="col-md-12 detail-map">
                 {% leaflet_map "main" callback="map_init" %}
 
                 <script type="text/javascript">
@@ -49,5 +42,33 @@
                     }
                 </script>
               </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 info_detail">
+                    <h2>Informasaun Detallu</h2>
+                </div>
+            </div>
+            <div class="row dark-them">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                      <h4>{{ object.name }}</h4>
+                      <h4>{{ object.district }}</h4>
+                      <h4>{{ object.geom }}</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                    <div class="card">
+                        <img class="card-image-top" src="{{ object.photo.url }}" alt="card image cap"  width="600" height="400">
+                        <div class="card-body">
+                          <h5 class="card-title">Foto Eskola</h5>
+                          <p class="card-text">{{ object.description }}</p>
+                          <p class="card-text"><small class="text-muted">By Niko <i class="fas fa-calendar-alt"></i>{% now "D-M-Y" %}</small></p>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
         </div>
 {% endblock %}
