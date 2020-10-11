@@ -45,30 +45,29 @@
             </div>
             <div class="row">
                 <div class="col-md-12 info_detail">
-                    <h2>Informasaun Detallu</h2>
+                    <p><h2>Informasaun Detallu</h2></p>
+                    <h5 class="card-info">
+                    Eskola {{ object.name }}<br/>
+                    Municipiu {{ object.district }}<br/>
+                    Koordinator {{ object.geom }}
+                    </h5>
                 </div>
             </div>
-            <div class="row dark-them">
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                      <h4>{{ object.name }}</h4>
-                      <h4>{{ object.district }}</h4>
-                      <h4>{{ object.geom }}</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                    <div class="card">
-                        <img class="card-image-top" src="{{ object.photo.url }}" alt="card image cap"  width="600" height="400">
-                        <div class="card-body">
-                          <h5 class="card-title">Foto Eskola</h5>
-                          <p class="card-text">{{ object.description }}</p>
-                          <p class="card-text"><small class="text-muted">By Niko <i class="fas fa-calendar-alt"></i>{% now "D-M-Y" %}</small></p>
+            <div class="row dark-content">
+                <div class="col-sm-10">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">
+                                {{ object.name }}
+                            </h5>
+                            <p class="card-text">
+                                {{ object.description }}
+                            </p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          </div>
+                            <img class="card-image-top" src="{{ object.photo.url }}" alt="card image cap"  width="550" height="400">
                         </div>
-                      </div>
                 </div>
-              </div>
             </div>
         </div>
 {% endblock %}
