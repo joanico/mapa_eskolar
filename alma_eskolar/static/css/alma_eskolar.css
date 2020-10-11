@@ -2,11 +2,12 @@ body {
     margin: 0px;
     color: #000000c7;
     font-family: 'Montserrat';
+    border-top: 1px solid #dee2e6;
 }
 
 #mapid { 
-    height: 460px; 
-    width: 1270px;
+    height: 350px; 
+    width: 1275px;
     margin-bottom: 30px;
 }
 
@@ -14,33 +15,79 @@ body {
     margin: 0px;
 }
 
-.logo {
-    font-size: 46px;
-}
-
-.text {
-    font-size: 18px;
-}
-
 /* HEADER */
 
 .bg-light {
-    padding: 20px;
-    border-bottom: 1px solid #dee2e6;
+    background-color: #052641!important;
+    font-family: sans-serif;
+}
+
+.navbar-light .navbar-brand {
+    font-family: sans-serif;
+    color: aliceblue;
 }
 
 .navbar-brand {
     font-size: 34px;
 }
 
-.detail-list {
-    border-right: 1px solid #dee2e6;
+span.setting {
+    color: limegreen;
+    padding-left: 810px;
 }
 
-.footer {
+.logo {
+    font-size: 36px;
+}
+
+.text {
+    font-size: 18px;
+}
+
+
+/* MAPA DETALLU */
+
+.info_detail {
+    margin: 20px;
+    text-align: center;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.card{
+    margin-left: 227px;
+    background-color: #6063630a;
+}
+
+.card-image-top {
+    margin-left: 125px;
+}
+
+h5.card-info {
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+/* FOOTER */
+.page-footer {
     margin-top: 30px;
     padding: 40px;
     border-top: 1px solid #dee2e6;
+    background-color: #052641;
+}
+
+.footer-copyright {
+    border-top: 1px solid #487579;
+    margin: 30px;
+    padding: 20px;
+    font-family: sans-serif;
+    color: aliceblue;
 }
 
 .list-name {
@@ -58,4 +105,15 @@ button.btn.btn-primary.search-filter {
     font-size: 16px;
     padding-left: 200px;
     display: initial;
+}
+
+/* LIST */
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+    margin-top: -30px;
+}
+
+.form {
+    margin-bottom: 0px;
 }
