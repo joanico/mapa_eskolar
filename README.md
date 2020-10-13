@@ -98,6 +98,9 @@ Kria mapa eskola sira iha Timor Leste
            ```
 27. Reload pajina hodi hare ita nia mapa     
 Reference: 
+
+   Geo Django : https://docs.djangoproject.com/en/3.1/ref/contrib/gis/tutorial/
+   
    Django Filter :
    
    Django pagination : https://dj-pagination.readthedocs.io/en/latest/usage.html
