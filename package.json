@@ -1,0 +1,19 @@
+{
+  "name": "mapa-eskolar",
+  "version": "1.0.0",
+  "description": "Kria mapa eskola sira iha Timor Leste  ## Etepa kria mapa eskolar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanico/mapa_eskolar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joanico/mapa_eskolar/issues"
+  },
+  "homepage": "https://github.com/joanico/mapa_eskolar#readme"
+}
