@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/joanico/mapa_eskolar/issues"
   },
-  "homepage": "https://github.com/joanico/mapa_eskolar#readme"
+  "homepage": "https://github.com/joanico/mapa_eskolar#readme",
+  "dependencies": {
+    "cowsay": "^1.4.0"
+  }
 }
