@@ -46,9 +46,9 @@ Kria mapa eskola sira iha Timor Leste
 9. Rejistu postgis iha `INSTALLED_APPS` settings `django.contrib.gis`
 
 10. Extra file mapa eskolar ho .shp husi shapefiles no uza funsaun `ogeinfo`
-       - `ogrinfo shapefiles/mapaeb.shp`  
+       - `ogrinfo shapefiles/mapa_ebc/mapa_ebc.shp`  
 
-       - `ogrinfo -so shapefiles/mapaeb.shp mapaeb`
+       - `ogrinfo -so shapefiles/mapa_ebc/mapa_ebc.shp mapa_ebc`
 11. Kria model 
 12. setup admin
 13. `./manage.py makemigrations` 
